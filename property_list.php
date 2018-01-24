@@ -434,7 +434,7 @@
                                     echo "<span class='pull-left'><b> Tip nekretnine: </b>" . $property->tip . "</span><br />\n";
                                     echo "<span class='pull-left'><b> Opština: </b>" . $property->naziv . "</span><br />\n";
                                     echo "<div class='list_properties' style='display: none;'>\n";
-                                    echo "<span class='pull-left'><b> Površina: </b>" . $property->povrsina . "<sup>2</sup></span><br />\n";
+                                    echo "<span class='pull-left'><b> Površina: </b>" . $property->povrsina . " m<sup>2</sup></span><br />\n";
                                     echo "<span class='pull-left'><b> Struktura: </b>" . $property->struktura . "</span><br />\n";
                                     echo "</div>\n";
                                     echo "<span class='proerty-price pull-left'>" . number_format($property->cena) . " €</span>\n";
