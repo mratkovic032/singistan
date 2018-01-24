@@ -232,7 +232,7 @@ else if (!isset($_SESSION['user_id'])) {
             <!-- /.modal-dialog --> 
         </div>
 
-        <div class="modal fade" id="pic" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+<!--        <div class="modal fade" id="pic" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -240,23 +240,16 @@ else if (!isset($_SESSION['user_id'])) {
                         <h4 class="modal-title custom_align" id="Heading">Slika korisnika</h4>
                     </div>
                     <div class="modal-body">
-                        <div class="text-center"><?php
-                        
-                        if ($r->putanja_slike != null) {
-                                echo "<img src='{$r->putanja_slike}'alt='profilna' class='img_profile_lg'/> \n";
-                            } else {
-                                echo "<img src='assets/img/profile_blank.jpg' alt='profilna' class='img_profile_lg'/> \n";
-                            }
-                        ?>
+                        <div class="text-center">                                                
                             
                         </div>
                     </div>
 
                 </div>
-                <!-- /.modal-content --> 
+                 /.modal-content  
             </div>
-            <!-- /.modal-dialog --> 
-        </div>
+             /.modal-dialog  
+        </div>-->
 
         <!-- Footer area-->
         <div class="footer-area">
