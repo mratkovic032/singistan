@@ -176,7 +176,7 @@ if (isset($_SESSION['username'])) {
                         <tbody>
                             <?php
                                             require 'php/database_connection.php';
-                                            $prep = $db->prepare('SELECT gledanje_nekretnine.id_nekretnina AS nekretnina_id, gledanje_nekretnine.vreme, nekretnina.id, nekretnina.adresa, kupac.ime, kupac.prezime, kupac.telefon, kupac.email FROM (gledanje_nekretnine INNER JOIN kupac ON gledanje_nekretnine.id_kupac = kupac.id) INNER JOIN nekretnina ON gledanje_nekretnine.id_nekretnina = nekretnina.id ORDER BY kupac.ime ASC;');
+                                            $prep = $db->prepare('SELECT gledanje_nekretnine.id AS id_to_del, gledanje_nekretnine.id_nekretnina AS nekretnina_id, gledanje_nekretnine.vreme, nekretnina.id, nekretnina.adresa, kupac.ime, kupac.prezime, kupac.telefon, kupac.email FROM (gledanje_nekretnine INNER JOIN kupac ON gledanje_nekretnine.id_kupac = kupac.id) INNER JOIN nekretnina ON gledanje_nekretnine.id_nekretnina = nekretnina.id ORDER BY kupac.ime ASC;');
                                             $prep->execute();
                                             $res = $prep->fetchAll(PDO::FETCH_OBJ);
                                             $br=1;
@@ -190,7 +190,7 @@ if (isset($_SESSION['username'])) {
                             echo "<td class='por'><a href='property_view.php?id={$r->nekretnina_id}' style='font-weight: normal;color: #73B1FC;'><span style='color:#000;'class='glyphicon glyphicon-home'></span>&nbsp; Pogledaj nekretninu</a></td> \n";
                             echo "<td class='por'>{$r->adresa}</td> \n";
                             echo "<td class='por'>{$r->vreme}</td> \n";
-                            echo "<td><button class='btn btn-default' onclick='if(confirm(\"Da li ste sigurni da želite da prihvatite obilazak sa kupcem?\")){window.open(\"php/delete_appointment.php?id={$r->id}\", \"_self\")};' ><span class='glyphicon glyphicon-check'></span>&nbsp; Potvrdi</a></td> \n";
+                            echo "<td><button class='btn btn-default' onclick='if(confirm(\"Da li ste sigurni da želite da prihvatite obilazak sa kupcem?\")){window.open(\"php/delete_appointment.php?id={$r->id_to_del}\", \"_self\")};' ><span class='glyphicon glyphicon-check'></span>&nbsp; Potvrdi</a></td> \n";
                             echo "</tr> \n";
                             $br=$br+1;
                             }           
