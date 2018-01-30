@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['username'])) {
+
+    header("Refresh: 4; url=login.php");
+    include_once '404.php';
+
+    exit(); // Quit the script.
+}
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -33,21 +44,7 @@
         <link rel="stylesheet" href="assets/css/nas_stil.css">
 
     </head>
-    <body id="top_of_the_page">
-        <?php
-        session_start();
-
-
-        // if no valid session is found then the user is not logged in and will
-        // receive a access denied message and will be redirected to the login page.
-        if (!isset($_SESSION['username'])) {
-
-            header("Refresh: 4; url=login.php");
-            include_once '404.php';
-
-            exit(); // Quit the script.
-        }
-        ?>
+    <body id="top_of_the_page">        
         <div id="preloader">
             <div id="status">&nbsp;</div>
         </div>

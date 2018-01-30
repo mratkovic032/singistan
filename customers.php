@@ -1,28 +1,21 @@
 <?php
 session_start();
 
-// If no session variable exists, or unauthorized user_level, redirect the user:
 if (isset($_SESSION['username'])) {
-    // if a valid user session is found then the user level is checked, if the
-    // user has level 3 access they will be granted access if not a access denied
-    //message be displayed and the user will be redirected.
     if ($_SESSION['user_type'] == "agent") {
         
     } else {
         header("Refresh: 3; url=index.php");
         include '404_customers.php';
 
-        exit(); // Quit the script.
+        exit();
     }
-}
-// if no valid session is found then the user is not logged in and will
-// receive a access denied message and will be redirected to the login page.
-else if (!isset($_SESSION['user_id'])) {
+} else if (!isset($_SESSION['username'])) {
 
     header("Refresh: 3; url=login.php");
     include_once '404.php';
 
-    exit(); // Quit the script.
+    exit(); 
 }
 ?>
 <!DOCTYPE html>
